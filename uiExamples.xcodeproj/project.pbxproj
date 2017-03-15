@@ -25,9 +25,13 @@
 		467F46211E786A1B00B91A58 /* PinterestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467F46201E786A1B00B91A58 /* PinterestFactory.swift */; };
 		467F46231E78733700B91A58 /* PinterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467F46221E78733700B91A58 /* PinterestCollectionViewCell.swift */; };
 		467F46251E78734A00B91A58 /* PinterestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 467F46241E78734A00B91A58 /* PinterestCollectionViewCell.xib */; };
+		46E5E66E1E79AD7500EFC74F /* PinterestImageLoaderInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E5E66D1E79AD7500EFC74F /* PinterestImageLoaderInterface.swift */; };
+		9AD7D914FA02F2B5AEEAA111 /* Pods_uiExamples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B257876F70CA55F7B3C86F /* Pods_uiExamples.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33B257876F70CA55F7B3C86F /* Pods_uiExamples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uiExamples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F2667C97C430E66E9D9E12E /* Pods-uiExamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uiExamples.release.xcconfig"; path = "Pods/Target Support Files/Pods-uiExamples/Pods-uiExamples.release.xcconfig"; sourceTree = "<group>"; };
 		46228E481E774B2B00815A2D /* ProjectDispatcherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDispatcherViewController.swift; sourceTree = "<group>"; };
 		46228E4A1E774B4500815A2D /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		46228E4C1E774B7F00815A2D /* ProjectDispatcherPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDispatcherPresenter.swift; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		467F46201E786A1B00B91A58 /* PinterestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestFactory.swift; sourceTree = "<group>"; };
 		467F46221E78733700B91A58 /* PinterestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestCollectionViewCell.swift; sourceTree = "<group>"; };
 		467F46241E78734A00B91A58 /* PinterestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PinterestCollectionViewCell.xib; sourceTree = "<group>"; };
+		46E5E66D1E79AD7500EFC74F /* PinterestImageLoaderInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestImageLoaderInterface.swift; sourceTree = "<group>"; };
+		F701A93474D4032D29DC390A /* Pods-uiExamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uiExamples.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uiExamples/Pods-uiExamples.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +61,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AD7D914FA02F2B5AEEAA111 /* Pods_uiExamples.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C7C4812C85704093DF9B327 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F701A93474D4032D29DC390A /* Pods-uiExamples.debug.xcconfig */,
+				3F2667C97C430E66E9D9E12E /* Pods-uiExamples.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		46228E471E774B1300815A2D /* ProjectDispatcher */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +94,8 @@
 			children = (
 				462C9B081E75E8CF001F99CA /* uiExamples */,
 				462C9B071E75E8CF001F99CA /* Products */,
+				2C7C4812C85704093DF9B327 /* Pods */,
+				9732CA1E7D8DBBD2E2C82F31 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,10 +147,19 @@
 		467F46171E78640100B91A58 /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				46E5E66D1E79AD7500EFC74F /* PinterestImageLoaderInterface.swift */,
 				467F46221E78733700B91A58 /* PinterestCollectionViewCell.swift */,
 				467F46241E78734A00B91A58 /* PinterestCollectionViewCell.xib */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		9732CA1E7D8DBBD2E2C82F31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33B257876F70CA55F7B3C86F /* Pods_uiExamples.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 462C9B181E75E8CF001F99CA /* Build configuration list for PBXNativeTarget "uiExamples" */;
 			buildPhases = (
+				A30CC809F3A661449255BEE7 /* [CP] Check Pods Manifest.lock */,
 				462C9B021E75E8CF001F99CA /* Sources */,
 				462C9B031E75E8CF001F99CA /* Frameworks */,
 				462C9B041E75E8CF001F99CA /* Resources */,
+				626D698826069F6D1C2BC938 /* [CP] Embed Pods Frameworks */,
+				90AF4D5234E477C236AFD001 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,6 +234,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		626D698826069F6D1C2BC938 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uiExamples/Pods-uiExamples-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90AF4D5234E477C236AFD001 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uiExamples/Pods-uiExamples-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A30CC809F3A661449255BEE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		462C9B021E75E8CF001F99CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -222,6 +300,7 @@
 				462C9B0A1E75E8CF001F99CA /* AppDelegate.swift in Sources */,
 				46228E4B1E774B4500815A2D /* Project.swift in Sources */,
 				46228E4D1E774B7F00815A2D /* ProjectDispatcherPresenter.swift in Sources */,
+				46E5E66E1E79AD7500EFC74F /* PinterestImageLoaderInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +419,7 @@
 		};
 		462C9B191E75E8CF001F99CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F701A93474D4032D29DC390A /* Pods-uiExamples.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = uiExamples/Info.plist;
@@ -352,6 +432,7 @@
 		};
 		462C9B1A1E75E8CF001F99CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F2667C97C430E66E9D9E12E /* Pods-uiExamples.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = uiExamples/Info.plist;

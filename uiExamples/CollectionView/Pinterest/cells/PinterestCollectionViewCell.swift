@@ -14,18 +14,27 @@ class PinterestCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
+    private var imageLoader: PinterestImageLoaderInterface!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        imageLoader = PinterestFactory.getImageLoader()
     }
     
     override func prepareForReuse() {
+        imageLoader.cancelImageLoad(imageView: imageView)
         imageView.image = nil
         captionLabel.text = nil
         titleLabel.text = nil
     }
     
     func showPinterestItem(pinterestItem: PinterestItem) {
-        // TODO: Load image
+        
+        let stringUrl = pinterestItem.imageUrl
+        if stringUrl != nil, let url = URL(string: stringUrl!){
+            imageLoader.loadImage(url: url, into: imageView)
+        }
+        
         captionLabel.text = pinterestItem.caption
         titleLabel.text = pinterestItem.title
     }

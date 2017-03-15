@@ -14,4 +14,7 @@ class PinterestFactory: NSObject {
         return PinterestPresenter()
     }
     
+    static func getImageLoader() -> PinterestImageLoaderInterface {
+        return PinterestImageLoader()
+    }
 }
