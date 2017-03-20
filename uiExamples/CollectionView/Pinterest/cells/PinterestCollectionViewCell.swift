@@ -13,6 +13,7 @@ class PinterestCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     
     private var imageLoader: PinterestImageLoaderInterface!
     
@@ -26,6 +27,13 @@ class PinterestCollectionViewCell: UICollectionViewCell {
         imageView.image = nil
         captionLabel.text = nil
         titleLabel.text = nil
+    }
+    
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
+        if let attributes = layoutAttributes as? PinterestLayoutAttributes {
+            imageViewHeightConstraint.constant = attributes.photoHeight
+        }
     }
     
     func showPinterestItem(pinterestItem: PinterestItem) {
