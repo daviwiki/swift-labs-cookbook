@@ -20,7 +20,8 @@ protocol PinterestView: NSObjectProtocol {
 class PinterestViewController: UIViewController, PinterestView {
 
     private var presenter: PinterestPresenter!
-    var items: [PinterestItem] = []
+    fileprivate var items: [PinterestItem] = []
+    fileprivate var numberOfColumns = 2
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -31,6 +32,19 @@ class PinterestViewController: UIViewController, PinterestView {
         configureCollectionView()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let isWideDesign = self.view.bounds.width > self.view.bounds.height
+        if isWideDesign {
+            numberOfColumns = 3
+        } else {
+            numberOfColumns = 2
+        }
+        
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
     private func configureCollectionView() {
         
         let nib = UINib(nibName: "PinterestCollectionViewCell", bundle: nil)
@@ -84,6 +98,10 @@ extension PinterestViewController: UICollectionViewDataSource {
 }
 
 extension PinterestViewController: PinterestCollectionViewLayoutDelegate {
+    
+    func numberOfColumnsFor(collectionView: UICollectionView) -> Int {
+        return numberOfColumns
+    }
     
     func collectionView(collectionView: UICollectionView,
                         heightForPhotoAtIndexPath indexPath: IndexPath,

@@ -10,6 +10,8 @@ import UIKit
 
 protocol PinterestCollectionViewLayoutDelegate: NSObjectProtocol {
     
+    func numberOfColumnsFor(collectionView: UICollectionView) -> Int
+    
     func collectionView(collectionView: UICollectionView,
                         heightForPhotoAtIndexPath indexPath: IndexPath,
                         cellWidth: CGFloat) -> CGFloat
@@ -54,6 +56,7 @@ class PinterestCollectionViewLayout: UICollectionViewLayout {
     
     private func calculateCollectionViewLayoutAttributes() {
         
+        numberOfColumns = delegate?.numberOfColumnsFor(collectionView: collectionView!) ?? 2
         let columnWidth = contentWidth / CGFloat(numberOfColumns)
         var xOffset = [CGFloat]()
         for column in 0 ..< numberOfColumns {
@@ -165,6 +168,14 @@ class PinterestCollectionViewLayout: UICollectionViewLayout {
         get {
             return PinterestLayoutAttributes.self
         }
+    }
+    
+    /**
+     This method is called whenever layout distribution / content size changed
+    */
+    override func invalidateLayout() {
+        cache.removeAll()
+        super.invalidateLayout()
     }
 }
 
