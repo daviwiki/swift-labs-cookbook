@@ -59,7 +59,7 @@ UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = sections[indexPath.row]
+        let section = sections[indexPath.section]
         let projects = section.projects
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "projectcell", for: indexPath) as! ProjectCell
@@ -69,7 +69,7 @@ UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let section = sections[indexPath.row]
+        let section = sections[indexPath.section]
         let projects = section.projects
         let project = projects[indexPath.row]
         

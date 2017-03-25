@@ -50,6 +50,7 @@ class GetProjectListInteractor: NSObject {
         
         do {
             try projects.append(PinterestProjectDefinition.getProject())
+            try projects.append(WWDC2016AnimationsProject.getProject())
         } catch {
             print("[GetProjectList] Project couldn't be added due to: \(error)")
         }

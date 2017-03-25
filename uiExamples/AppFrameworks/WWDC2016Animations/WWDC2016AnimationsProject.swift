@@ -1,25 +1,24 @@
 //
-//  PinterestProjectDefinition.swift
+//  WWDC2016AnimationsProject.swift
 //  uiExamples
 //
-//  Created by David Martinez on 13/03/2017.
+//  Created by David Martinez on 25/03/2017.
 //  Copyright © 2017 Atenea. All rights reserved.
 //
 
 import UIKit
 
-class PinterestProjectDefinition: NSObject, ProjectDispatcherInterface {
-
+class WWDC2016AnimationsProject: NSObject, ProjectDispatcherInterface {
+    
     static func getProject() throws -> Project {
+        
         let builder = Project.Builder()
-        builder.setName(name: "Pinterest")
+        builder.setName(name: "Advances in UIKit Animations and Transitions")
         builder.setNavigation(navigation: { (navigation: UINavigationController) in
-            let controller = PinterestViewController(nibName: "PinterestViewController", bundle: nil)
+            let controller = WWDC2016AnimationsViewController(nibName: "WWDC2016AnimationsViewController", bundle: nil)
             navigation.present(controller, animated: true, completion: nil)
-//            navigation.pushViewController(controller, animated: true)
         })
         
         return try builder.build()
     }
-    
 }
