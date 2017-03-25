@@ -23,8 +23,8 @@ class ProjectDispatcherPresenter: NSObject {
     
     func loadProjects() {
         
-        getProjects.getProjects { (projects: [Project]) in
-            self.view?.showProjects(projects: projects)
+        getProjects.getProjects { (sections: [Section]) in
+            self.view?.showSections(sections: sections)
         }
         
     }

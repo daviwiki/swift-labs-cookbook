@@ -10,14 +10,14 @@ import UIKit
 
 protocol ProjectDispatcherView: NSObjectProtocol {
     
-    func showProjects(projects: [Project])
+    func showSections(sections: [Section])
 }
 
 class ProjectDispatcherViewController: UIViewController, ProjectDispatcherView,
 UITableViewDataSource, UITableViewDelegate {
     
     private var presenter: ProjectDispatcherPresenter!
-    private var projects: [Project] = []
+    private var sections: [Section] = []
     @IBOutlet weak var tableView: UITableView!
     
     override func awakeFromNib() {
@@ -27,8 +27,8 @@ UITableViewDataSource, UITableViewDelegate {
         presenter = ProjectDispatcherPresenter(getProjects: getProjects)
     }
     
-    func showProjects(projects: [Project]) {
-        self.projects = projects
+    func showSections(sections: [Section]) {
+        self.sections = sections
         tableView.reloadData()
     }
     
@@ -45,14 +45,23 @@ UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return sections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return projects.count
+        let sec = sections[section]
+        return sec.projects.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sec = sections[section]
+        return sec.name
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let section = sections[indexPath.row]
+        let projects = section.projects
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "projectcell", for: indexPath) as! ProjectCell
         let project = projects[indexPath.row]
         cell.showProject(project: project)
@@ -60,6 +69,8 @@ UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = sections[indexPath.row]
+        let projects = section.projects
         let project = projects[indexPath.row]
         
         guard let navigationController = self.navigationController else { return }
@@ -74,5 +85,14 @@ class ProjectCell: UITableViewCell {
     
     func showProject(project: Project) {
         nameLabel.text = project.name
+    }
+}
+
+class HeaderCell: UITableViewCell {
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    func showSection(section: Section) {
+        nameLabel.text = section.name
     }
 }

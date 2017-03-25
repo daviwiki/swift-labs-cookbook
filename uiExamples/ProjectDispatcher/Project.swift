@@ -15,8 +15,10 @@ enum ProjectBuilderError: Error {
 
 class Project: NSObject {
 
+    typealias Navigation = ((UINavigationController) -> Void)
+    
     private(set) var name: String = ""
-    private(set) var navigation: ((UINavigationController) -> Void)!
+    private(set) var navigation: Navigation!
     
     class Builder: NSObject {
         
@@ -26,7 +28,7 @@ class Project: NSObject {
             project.name = name
         }
         
-        func setNavigation(navigation: @escaping ((UINavigationController) -> Void)) {
+        func setNavigation(navigation: @escaping Navigation) {
             project.navigation = navigation
         }
         
