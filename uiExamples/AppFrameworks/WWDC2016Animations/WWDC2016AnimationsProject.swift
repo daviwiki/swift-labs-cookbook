@@ -15,8 +15,10 @@ class WWDC2016AnimationsProject: NSObject, ProjectDispatcherInterface {
         let builder = Project.Builder()
         builder.setName(name: "Advances in UIKit Animations and Transitions")
         builder.setNavigation(navigation: { (navigation: UINavigationController) in
-            let controller = WWDC2016AnimationsViewController(nibName: "WWDC2016AnimationsViewController", bundle: nil)
-            navigation.present(controller, animated: true, completion: nil)
+            
+            let storyboard = UIStoryboard(name: "WWDC2016Animations", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier :"WWDC2016AnimationsViewController")
+            navigation.present(viewController, animated: true, completion: nil)
         })
         
         return try builder.build()

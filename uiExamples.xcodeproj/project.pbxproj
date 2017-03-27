@@ -29,7 +29,9 @@
 		468E29991E86FC36003A9C98 /* PinterestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 468E298F1E86FC36003A9C98 /* PinterestViewController.xib */; };
 		468E299B1E86FCDC003A9C98 /* WWDC2016AnimationsProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E299A1E86FCDC003A9C98 /* WWDC2016AnimationsProject.swift */; };
 		468E299E1E86FD58003A9C98 /* WWDC2016AnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E299C1E86FD58003A9C98 /* WWDC2016AnimationsViewController.swift */; };
-		468E299F1E86FD58003A9C98 /* WWDC2016AnimationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 468E299D1E86FD58003A9C98 /* WWDC2016AnimationsViewController.xib */; };
+		468E29A31E870258003A9C98 /* BasicsAnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E29A11E870258003A9C98 /* BasicsAnimationsViewController.swift */; };
+		468E29A61E87037C003A9C98 /* WWDC2016Animations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468E29A51E87037C003A9C98 /* WWDC2016Animations.storyboard */; };
+		468E29A91E870672003A9C98 /* DismissStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E29A81E870672003A9C98 /* DismissStoryboardSegue.swift */; };
 		9AD7D914FA02F2B5AEEAA111 /* Pods_uiExamples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B257876F70CA55F7B3C86F /* Pods_uiExamples.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +62,9 @@
 		468E298F1E86FC36003A9C98 /* PinterestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PinterestViewController.xib; sourceTree = "<group>"; };
 		468E299A1E86FCDC003A9C98 /* WWDC2016AnimationsProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWDC2016AnimationsProject.swift; sourceTree = "<group>"; };
 		468E299C1E86FD58003A9C98 /* WWDC2016AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWDC2016AnimationsViewController.swift; sourceTree = "<group>"; };
-		468E299D1E86FD58003A9C98 /* WWDC2016AnimationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WWDC2016AnimationsViewController.xib; sourceTree = "<group>"; };
+		468E29A11E870258003A9C98 /* BasicsAnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicsAnimationsViewController.swift; sourceTree = "<group>"; };
+		468E29A51E87037C003A9C98 /* WWDC2016Animations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WWDC2016Animations.storyboard; sourceTree = "<group>"; };
+		468E29A81E870672003A9C98 /* DismissStoryboardSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissStoryboardSegue.swift; sourceTree = "<group>"; };
 		F701A93474D4032D29DC390A /* Pods-uiExamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uiExamples.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uiExamples/Pods-uiExamples.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,7 @@
 			children = (
 				46228E471E774B1300815A2D /* ProjectDispatcher */,
 				468E29811E86FBED003A9C98 /* AppFrameworks */,
+				468E29A71E87063E003A9C98 /* Utils */,
 				462C9B091E75E8CF001F99CA /* AppDelegate.swift */,
 				462C9B0D1E75E8CF001F99CA /* Main.storyboard */,
 				462C9B121E75E8CF001F99CA /* LaunchScreen.storyboard */,
@@ -142,9 +147,10 @@
 		468E29821E86FC06003A9C98 /* WWDC2016Animations */ = {
 			isa = PBXGroup;
 			children = (
+				468E29A01E87000F003A9C98 /* Basics */,
 				468E299A1E86FCDC003A9C98 /* WWDC2016AnimationsProject.swift */,
 				468E299C1E86FD58003A9C98 /* WWDC2016AnimationsViewController.swift */,
-				468E299D1E86FD58003A9C98 /* WWDC2016AnimationsViewController.xib */,
+				468E29A51E87037C003A9C98 /* WWDC2016Animations.storyboard */,
 			);
 			path = WWDC2016Animations;
 			sourceTree = "<group>";
@@ -180,6 +186,22 @@
 				468E29881E86FC36003A9C98 /* PinterestImageLoaderInterface.swift */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		468E29A01E87000F003A9C98 /* Basics */ = {
+			isa = PBXGroup;
+			children = (
+				468E29A11E870258003A9C98 /* BasicsAnimationsViewController.swift */,
+			);
+			path = Basics;
+			sourceTree = "<group>";
+		};
+		468E29A71E87063E003A9C98 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				468E29A81E870672003A9C98 /* DismissStoryboardSegue.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		9732CA1E7D8DBBD2E2C82F31 /* Frameworks */ = {
@@ -257,7 +279,7 @@
 				468E29911E86FC36003A9C98 /* PinterestCollectionViewCell.xib in Resources */,
 				462C9B111E75E8CF001F99CA /* Assets.xcassets in Resources */,
 				462C9B0F1E75E8CF001F99CA /* Main.storyboard in Resources */,
-				468E299F1E86FD58003A9C98 /* WWDC2016AnimationsViewController.xib in Resources */,
+				468E29A61E87037C003A9C98 /* WWDC2016Animations.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468E29A31E870258003A9C98 /* BasicsAnimationsViewController.swift in Sources */,
 				468E29801E86D778003A9C98 /* Section.swift in Sources */,
 				468E29981E86FC36003A9C98 /* PinterestViewController.swift in Sources */,
 				468E299B1E86FCDC003A9C98 /* WWDC2016AnimationsProject.swift in Sources */,
@@ -331,6 +354,7 @@
 				46228E531E774CBB00815A2D /* ProjectDispatcherInterface.swift in Sources */,
 				468E29921E86FC36003A9C98 /* PinterestImageLoaderInterface.swift in Sources */,
 				462C9B0A1E75E8CF001F99CA /* AppDelegate.swift in Sources */,
+				468E29A91E870672003A9C98 /* DismissStoryboardSegue.swift in Sources */,
 				46228E4B1E774B4500815A2D /* Project.swift in Sources */,
 				46228E4D1E774B7F00815A2D /* ProjectDispatcherPresenter.swift in Sources */,
 			);
