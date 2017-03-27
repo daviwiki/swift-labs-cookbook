@@ -17,6 +17,10 @@ protocol PinterestView: NSObjectProtocol {
     func appendPinteresetItems(items: [PinterestItem])
 }
 
+/**
+    - TODO: * Search why a NSInternalInconsistencyException is raised due to
+     'no UICollectionViewLayoutAttributes instance for -layoutAttributesForItemAtIndexPath:
+ */
 class PinterestViewController: UIViewController, PinterestView {
 
     private var presenter: PinterestPresenter!
