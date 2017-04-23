@@ -11,8 +11,10 @@ Enjoy!
 # What I will find?
     [x] CollectionView - Building my first CollectionFlowLayout
         [ ] issue - pending when rotate (wip)
-    [x] Animations Cookbook - from the basics
-    [ ] Animations Cookbook - Advanced
+    [x] Animations Cookbook
+        [x] from the basics
+        [ ] advanced (coming soon)
+        [x] custom transition animation between two view controllers
 
 # Installation instructions
 
