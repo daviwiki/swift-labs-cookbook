@@ -16,6 +16,10 @@
 		462C9B0F1E75E8CF001F99CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462C9B0D1E75E8CF001F99CA /* Main.storyboard */; };
 		462C9B111E75E8CF001F99CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 462C9B101E75E8CF001F99CA /* Assets.xcassets */; };
 		462C9B141E75E8CF001F99CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462C9B121E75E8CF001F99CA /* LaunchScreen.storyboard */; };
+		465B2D001EABB0E800AA39EA /* CircleTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465B2CFF1EABB0E800AA39EA /* CircleTransitionViewController.swift */; };
+		465B2D021EABB10C00AA39EA /* CircleTransitionDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465B2D011EABB10C00AA39EA /* CircleTransitionDestinationViewController.swift */; };
+		465B2D041EABBDA100AA39EA /* CircleAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465B2D031EABBDA100AA39EA /* CircleAnimationTransition.swift */; };
+		4663EA2F1EAD0B0B00BA14E6 /* CircleDismissAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4663EA2E1EAD0B0B00BA14E6 /* CircleDismissAnimationTransition.swift */; };
 		468E29801E86D778003A9C98 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E297F1E86D778003A9C98 /* Section.swift */; };
 		468E29901E86FC36003A9C98 /* PinterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E29861E86FC36003A9C98 /* PinterestCollectionViewCell.swift */; };
 		468E29911E86FC36003A9C98 /* PinterestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 468E29871E86FC36003A9C98 /* PinterestCollectionViewCell.xib */; };
@@ -49,6 +53,10 @@
 		462C9B101E75E8CF001F99CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		462C9B131E75E8CF001F99CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		462C9B151E75E8CF001F99CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		465B2CFF1EABB0E800AA39EA /* CircleTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTransitionViewController.swift; sourceTree = "<group>"; };
+		465B2D011EABB10C00AA39EA /* CircleTransitionDestinationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTransitionDestinationViewController.swift; sourceTree = "<group>"; };
+		465B2D031EABBDA100AA39EA /* CircleAnimationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleAnimationTransition.swift; sourceTree = "<group>"; };
+		4663EA2E1EAD0B0B00BA14E6 /* CircleDismissAnimationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDismissAnimationTransition.swift; sourceTree = "<group>"; };
 		468E297F1E86D778003A9C98 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		468E29861E86FC36003A9C98 /* PinterestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestCollectionViewCell.swift; sourceTree = "<group>"; };
 		468E29871E86FC36003A9C98 /* PinterestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PinterestCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -135,6 +143,18 @@
 			path = uiExamples;
 			sourceTree = "<group>";
 		};
+		465B2CFE1EABB04C00AA39EA /* ControllerTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				465B2D031EABBDA100AA39EA /* CircleAnimationTransition.swift */,
+				4663EA2E1EAD0B0B00BA14E6 /* CircleDismissAnimationTransition.swift */,
+				465B2CFF1EABB0E800AA39EA /* CircleTransitionViewController.swift */,
+				465B2D011EABB10C00AA39EA /* CircleTransitionDestinationViewController.swift */,
+			);
+			name = ControllerTransitions;
+			path = ControllerTransition;
+			sourceTree = "<group>";
+		};
 		468E29811E86FBED003A9C98 /* AppFrameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +167,7 @@
 		468E29821E86FC06003A9C98 /* WWDC2016Animations */ = {
 			isa = PBXGroup;
 			children = (
+				465B2CFE1EABB04C00AA39EA /* ControllerTransitions */,
 				468E29A01E87000F003A9C98 /* Basics */,
 				468E299A1E86FCDC003A9C98 /* WWDC2016AnimationsProject.swift */,
 				468E299C1E86FD58003A9C98 /* WWDC2016AnimationsViewController.swift */,
@@ -351,9 +372,13 @@
 				46228E491E774B2B00815A2D /* ProjectDispatcherViewController.swift in Sources */,
 				468E299E1E86FD58003A9C98 /* WWDC2016AnimationsViewController.swift in Sources */,
 				468E29941E86FC36003A9C98 /* PinterestFactory.swift in Sources */,
+				4663EA2F1EAD0B0B00BA14E6 /* CircleDismissAnimationTransition.swift in Sources */,
 				46228E531E774CBB00815A2D /* ProjectDispatcherInterface.swift in Sources */,
 				468E29921E86FC36003A9C98 /* PinterestImageLoaderInterface.swift in Sources */,
+				465B2D041EABBDA100AA39EA /* CircleAnimationTransition.swift in Sources */,
+				465B2D001EABB0E800AA39EA /* CircleTransitionViewController.swift in Sources */,
 				462C9B0A1E75E8CF001F99CA /* AppDelegate.swift in Sources */,
+				465B2D021EABB10C00AA39EA /* CircleTransitionDestinationViewController.swift in Sources */,
 				468E29A91E870672003A9C98 /* DismissStoryboardSegue.swift in Sources */,
 				46228E4B1E774B4500815A2D /* Project.swift in Sources */,
 				46228E4D1E774B7F00815A2D /* ProjectDispatcherPresenter.swift in Sources */,
